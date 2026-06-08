@@ -9,7 +9,7 @@ export const config: Knex.Config = {
           filename: env.DATABASE_URL,
         }
       : {
-          connectString: env.DATABASE_URL,
+          connectionString: env.DATABASE_URL,
           ssl: { rejectUnauthorized: false },
         },
   useNullAsDefault: true,
