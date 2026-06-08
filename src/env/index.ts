@@ -7,12 +7,6 @@ if (process.env.NODE_ENV === "test") {
   config();
 }
 
-console.log("ENV DEBUG:", {
-  NODE_ENV: process.env.NODE_ENV,
-  DATABASE_CLIENT: process.env.DATABASE_CLIENT,
-  DATABASE_URL: process.env.DATABASE_URL ? "defined" : "undefined",
-});
-
 const envSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("production"),
   DATABASE_CLIENT: z.enum(["sqlite", "pg"]),
